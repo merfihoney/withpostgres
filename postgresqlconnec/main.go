@@ -9,7 +9,8 @@ import (
 )
 
 func connectDB() (*sql.DB, error) {
-	db, err := sql.Open("postgres", "user=postgres password=6465 dbname=Users host=localhost port=5432 sslmode=disable")
+	db, err := sql.Open("postgres", "user=postgres password=postgres dbname=GoLang host=localhost port=5432 sslmode=disable")
+	//Change for your parameters!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +78,7 @@ func deleteUser(userID int) error {
 }
 
 func main() {
-	connStr := "user=postgres dbname=Users password=6465 sslmode=disable"
+	connStr := "user=postgres dbname=GoLang password=postgres sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 
 	if err != nil {
